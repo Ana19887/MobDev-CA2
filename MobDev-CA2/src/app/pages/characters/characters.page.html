@@ -8,8 +8,8 @@
 <ion-content class="ion-padding">
  <ion-list>
     <ion-item button detail lines="inset"
-     *ngFor="let episode of (episodes | async)" (click)="openDetails(episode)">
-      {{ episode.title }}
+     *ngFor="let character of (Characters | async)" (click)="openDetails(character)">
+      {{ character.name }}
     </ion-item>
   </ion-list>
   
