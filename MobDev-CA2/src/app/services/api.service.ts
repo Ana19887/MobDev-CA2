@@ -16,7 +16,7 @@ export class ApiService {
     return this.http.get(`https://breakingbadapi.com/api/episodes/${id}`);
   }
 
-  getCharacters() {
+   getCharacters() {
     return this.http.get('https://breakingbadapi.com/api/characters');
   }
 
@@ -24,4 +24,7 @@ export class ApiService {
     return this.http.get(`https://breakingbadapi.com/api/characters/${id}`);
   }
 
+  getQuotes() {
+    return this.http.get('https://breakingbadapi.com/api/quotes');
+  }
 }
