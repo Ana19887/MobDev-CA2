@@ -16,7 +16,7 @@ export class CharactersPage implements OnInit {
     constructor(private router: Router, private api: ApiService) { }
 
    ngOnInit() {
-      this.characters = this.api.getEpisodes();
+      this.characters = this.api.getCharacters();
   }
   
   openDetails(character) {
