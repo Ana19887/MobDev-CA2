@@ -11,6 +11,7 @@ import { ApiService } from '../../services/api.service';
 export class QuotesPage implements OnInit {
 
     quotes: Observable <any>;
+    
     constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit() {
