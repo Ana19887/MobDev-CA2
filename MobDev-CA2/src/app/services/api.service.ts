@@ -17,7 +17,7 @@ export class ApiService {
   }
 
   getCharacters() {
-    return this.http.get('https://breakingbadapi.com//api/characters');
+    return this.http.get('https://breakingbadapi.com/api/characters');
   }
 
   getCharacter(id) {

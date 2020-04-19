@@ -20,5 +20,9 @@ export class CharactersPage implements OnInit {
       this.characters = this.api.getCharacters();
   }
   
+  openDetails(character) {
+    let characterId = character.char_id;
+    this.router.navigateByUrl(`/tabs/characters/${characterId}`);
+  }
 
 }
