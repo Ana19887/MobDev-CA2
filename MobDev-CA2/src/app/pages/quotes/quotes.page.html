@@ -6,10 +6,11 @@
 
 <ion-content class="ion-padding">
  <ion-list>
-    <ion-item button detail lines="inset"
-     *ngFor="let quote of (quotes | async)" (click)="openDetails(quotes)">
-      {{ quotes.quote }}
+    <ion-item 
+     *ngFor="let quote of (quotes | async)">
+      {{quote.quote}}
     </ion-item>
   </ion-list>
   
 </ion-content>
+
