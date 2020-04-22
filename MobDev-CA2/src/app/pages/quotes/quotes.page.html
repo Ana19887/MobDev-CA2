@@ -6,9 +6,11 @@
 
 <ion-content class="ion-padding">
  <ion-list>
-    <ion-item 
+    <ion-item button detail lines="inset"
      *ngFor="let quote of (quotes | async)">
-      {{quote.quote}}
+      {{ quote.quote}}
+     (Author:  {{ quote.author}})
+     
     </ion-item>
   </ion-list>
   

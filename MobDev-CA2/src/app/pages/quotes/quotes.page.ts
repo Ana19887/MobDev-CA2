@@ -19,5 +19,8 @@ export class QuotesPage implements OnInit {
   ngOnInit() {
       this.quotes = this.api.getQuotes();
   }
-
+  openDetails(quote) {
+    let quoteId = quote.quote_id;
+    this.router.navigateByUrl(`/tabs/quotes/${quoteId}`);
+  }
 }
