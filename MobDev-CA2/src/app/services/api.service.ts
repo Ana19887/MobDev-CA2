@@ -33,12 +33,13 @@ export class ApiService {
   getQuote(id) {
     return this.http.get(`https://breakingbadapi.com/api/quotes/${id}`);
   }
-
-  getDeaths() {
+  
+   getDeaths() {
     return this.http.get('https://breakingbadapi.com/api/deaths');
   }
-   getDeath(search) {
-    return this.http.get(`https://breakingbadapi.com/api/deaths${search}`);
-  }
+
+   searchDeath(search) {
+    return this.http.get(`https://breakingbadapi.com/api/death-count?name=${encodeURI(search)}`);
+   }
   
-}
+   }
