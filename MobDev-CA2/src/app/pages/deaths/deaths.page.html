@@ -1,19 +1,22 @@
 <ion-header>
-    <ion-toolbar color="primary">
-    <ion-title>Deaths</ion-title>
+  	
+  <ion-toolbar color="primary">
+    <ion-title>Death Count</ion-title>
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
- <ion-searchbar [(ngModel)]="Search" (ionChange)="onSearchChange($event)"></ion-searchbar>
-     <ion-item 
-     *ngFor="let death of (deaths | async)">
-    </ion-item>
-    <ion-label text wrap>
-    {{death.name}}
-    {{death.deathCount}}
-    </ion-label>
-  
-</ion-content>
+    <ion-searchbar [(ngModel)]="search" (ionChange)="onSearchChange($event)"></ion-searchbar>
+    
+    <ion-item button *ngFor="let death of (deaths | async)" >
       
+ 
+      <ion-label text-wrap>
+ 
+       Name: {{ death.name }}
+       DeathCount: {{death.deathCount}}
+      </ion-label>
+    </ion-item>
+</ion-content>
    

@@ -9,14 +9,17 @@
 
  <ion-list>
     <ion-item button detail lines="inset"
-     *ngFor="let character of (characters | async)" (click)="openDetails(character)">
+     *ngFor="let character of (characters )" (click)="openDetails(character)">
       {{character.name}}
     </ion-item>
   </ion-list>
-  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadCharacter($event)">
+
+  <ion-infinite-scroll threshold="5%" (ionInfinite)="loadMore($event)">
     <ion-infinite-scroll-content
-      loadingSpinner="bubbles"
-      loadingText="Loading more ...">
+      loadingSpinner="bubbles" loadingText="Loading more ...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
+  
 </ion-content>
+  
+

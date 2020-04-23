@@ -16,9 +16,10 @@ export class ApiService {
     return this.http.get(`https://breakingbadapi.com/api/episodes/${id}`);
   }
 
-   getCharacters() {
-    return this.http.get('https://breakingbadapi.com/api/characters?limit=10&offset=0');
+  getCharacters(offset) {
+    return this.http.get(`https://breakingbadapi.com/api/characters?limit=10&offset=${offset}`);
     }
+    
 
 
   getCharacter(id) {
@@ -34,11 +35,11 @@ export class ApiService {
     return this.http.get(`https://breakingbadapi.com/api/quotes/${id}`);
   }
   
-   getDeaths() {
-    return this.http.get('https://breakingbadapi.com/api/deaths');
-  }
+  // getDeaths() {
+  //  return this.http.get('https://breakingbadapi.com/api/deaths');
+ // }
 
-   searchDeath(search) {
+   getDeath(search) {
     return this.http.get(`https://breakingbadapi.com/api/death-count?name=${encodeURI(search)}`);
    }
   

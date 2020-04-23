@@ -12,16 +12,38 @@ import { IonInfiniteScroll } from '@ionic/angular';
 })
 export class CharactersPage implements OnInit {
     offset = 0;
-    characters: Observable<any>;
+    characters=[];
+    maximumCharacters = 200;
 
-  @ViewChild(IonInfiniteScroll,null) infinite: IonInfiniteScroll;
+ // @ViewChild(IonInfiniteScroll,null) infinite: IonInfiniteScroll;
 
-    constructor(private router: Router, private api: ApiService) { }
+    constructor(private router: Router, private api: ApiService) { 
+        
+    }
 
    ngOnInit() {
-        this.characters = this.api.getCharacters();
-  }
+      this.loadCharacters();
 
+        }
+  loadCharacters(event?){
+    this.api.getCharacters(this.offset).subscribe(res =>{
+         
+         this.characters = this.characters.concat(res);
+         
+
+         if (event){
+             event.target.complete();
+         }
+     })
+  }
+  loadMore(){
+      console.log(event);
+      this.offset+=10;
+      this.loadCharacters(event);
+
+     
+      }
+  
     
   openDetails(character) {
     let characterId = character.char_id;

@@ -11,20 +11,31 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DeathsPage implements OnInit {
 
-    deaths: any;
-    search= "";
+    deaths: Observable<any>;
+    search: string = '';
     
-constructor(private router: Router, private api: ApiService) { }
+constructor( private api: ApiService) { }
 
-  ngOnInit() {
-       
+  ngOnInit() { 
       
 }    
   
  onSearchChange(event) {
      
-    this.search = event.target.value;
-    this.deaths = this.api.searchDeath(this.search);
-     }
+    let value = event.target.value;
+    //this.search = event.target.value;
+    //this.deaths = this.api.getDeath(this.search);
     
+    if (value ==""){
+       this.api.getDeath("");
+       return;
+    }
+    
+    this.api.getDeath(this.search).subscribe(res =>{
+       this.deaths = this.api.getDeath(this.search);;
+    }, err=>{
+        this.deaths;
+    
+    });
+     }
 }
