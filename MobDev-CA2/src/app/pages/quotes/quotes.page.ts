@@ -12,7 +12,7 @@ import { ApiService } from '../../services/api.service';
 })
 export class QuotesPage implements OnInit {
 
-    quotes: Observable <any>;
+    quotes: any;
     
     constructor(private router: Router, private api: ApiService) { }
 
@@ -20,7 +20,18 @@ export class QuotesPage implements OnInit {
       this.quotes = this.api.getQuotes()
   }
   
- 
+  getItems(event){
+     this.quotes = this.api.getQuotes()
   
+
+  let val = event.target.value;
+
+  if (val && val.trim()!= ""){
+      this.quotes = this.quotes.filter((item) =>{
+        return(item.author.toLowerCase().indexOf(val.toLowerCase())> -1);
+      })
+  }
+ 
+  }  
   
 }

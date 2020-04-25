@@ -15,19 +15,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<ion-card *ngIf="episode" class="movie-card">
+<ion-content >
+<ion-card *ngIf="episode" class="episode-card">
   <ion-card-header>Episode {{ episode.episode }}</ion-card-header>
+  
     <ion-card-content>
      Season: {{ episode.season }}
     </ion-card-content>
-    <ion-item class="movie-info" lines="none">
-      <ion-icon name="episode" slot="start"></ion-icon>
-      Characters: {{ episode.characters }}
-    </ion-item>
-    <ion-item class="movie-info" lines="none">
-      <ion-icon name="calendar" slot="start"></ion-icon>
+    <ion-card-content>
+    <ion-icon name="calendar" slot="start"></ion-icon>
       Release Date: {{ episode.air_date }}
-    </ion-item>
+    </ion-card-content>
+    <ion-card-content>
+    <ion-icon name="people" slot="start"></ion-icon>
+      Characters: {{ episode.characters }}
+      </ion-card-content>
+  
   </ion-card>
 </ion-content>
