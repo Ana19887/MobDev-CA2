@@ -8,7 +8,7 @@
 <ion-content class="ion-padding">
  <ion-searchbar color="light" [(ngModel)]="author" (ionChange)="searchItem($event)"></ion-searchbar>
  <ion-list>
-    <ion-item button 
+    <ion-item button color="white"
      *ngFor="let quote of (quotes)" (click)="openDetails(quote)">
       {{ quote.quote}}
     </ion-item>
