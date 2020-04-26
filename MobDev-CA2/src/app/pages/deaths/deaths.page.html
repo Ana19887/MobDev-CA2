@@ -6,7 +6,7 @@
 
 </ion-header>
 
-<ion-content>
+<ion-content >
     <ion-searchbar [(ngModel)]="search" (ionChange)="SearchDeath($event)"></ion-searchbar>
     
     <ion-item button *ngFor="let death of (deaths | async)" >

@@ -27,7 +27,7 @@ export class QuotesPage implements OnInit {
     });
   }
 
-  //function to search an author and list all quotes from him
+  //function to search an author and list all quotes from this author
   searchItem(event){
       this.author = event.detail.value;
       if (this.author ==""){

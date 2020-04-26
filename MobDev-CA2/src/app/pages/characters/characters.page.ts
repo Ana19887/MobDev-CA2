@@ -14,9 +14,6 @@ export class CharactersPage implements OnInit {
     offset = 0;
     characters=[];
    
-
- 
-
     constructor(private router: Router, private api: ApiService) { 
         
     }
@@ -26,18 +23,18 @@ export class CharactersPage implements OnInit {
 
         }
 
-        
+  //function to load the page  with 10 characters    
   loadCharacters(event?){
     this.api.getCharacters(this.offset).subscribe(res =>{
          
          this.characters = this.characters.concat(res);
-         
-
+        
          if (event){
              event.target.complete();
          }
      })
   }
+//function to load more characters
   loadMore(){
       console.log(event);
       this.offset+=10;

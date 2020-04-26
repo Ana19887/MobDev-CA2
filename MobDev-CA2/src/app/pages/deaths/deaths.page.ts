@@ -19,12 +19,10 @@ constructor( private api: ApiService) { }
   ngOnInit() { 
       
 }    
-  
+  //function to search for the name of character and return the number of deaths
  SearchDeath(event) {
      this.search = event.target.value
-   //let value = event.target.value;
-    //this.search = event.target.value;
-    //this.deaths = this.api.getDeath(this.search);
+   
     
     if (this.search ==""){
       this.deaths=this.api.getDeath("");
