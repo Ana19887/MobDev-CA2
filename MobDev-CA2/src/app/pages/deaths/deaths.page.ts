@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class DeathsPage implements OnInit {
 
     deaths: Observable<any>;
-    search: string = '';
+    search: string= '';
     
 constructor( private api: ApiService) { }
 
@@ -20,19 +20,19 @@ constructor( private api: ApiService) { }
       
 }    
   
- onSearchChange(event) {
-     
-    let value = event.target.value;
+ SearchDeath(event) {
+     this.search = event.target.value
+   //let value = event.target.value;
     //this.search = event.target.value;
     //this.deaths = this.api.getDeath(this.search);
     
-    if (value ==""){
-       this.api.getDeath("");
-       return;
+    if (this.search ==""){
+      this.deaths=this.api.getDeath("");
+    
     }
     
     this.api.getDeath(this.search).subscribe(res =>{
-       this.deaths = this.api.getDeath(this.search);;
+       this.deaths = this.api.getDeath(this.search);
     }, err=>{
         this.deaths;
     

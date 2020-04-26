@@ -13,9 +13,9 @@ import { IonInfiniteScroll } from '@ionic/angular';
 export class CharactersPage implements OnInit {
     offset = 0;
     characters=[];
-    maximumCharacters = 200;
+   
 
- // @ViewChild(IonInfiniteScroll,null) infinite: IonInfiniteScroll;
+ 
 
     constructor(private router: Router, private api: ApiService) { 
         
@@ -25,6 +25,8 @@ export class CharactersPage implements OnInit {
       this.loadCharacters();
 
         }
+
+        
   loadCharacters(event?){
     this.api.getCharacters(this.offset).subscribe(res =>{
          

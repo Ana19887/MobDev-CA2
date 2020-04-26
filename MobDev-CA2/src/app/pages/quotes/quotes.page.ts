@@ -13,25 +13,45 @@ import { ApiService } from '../../services/api.service';
 export class QuotesPage implements OnInit {
 
     quotes: any;
-    
+    author ="";
     constructor(private router: Router, private api: ApiService) { }
 
   ngOnInit() {
-      this.quotes = this.api.getQuotes()
+      this.loadQuotes();
   }
-  
-  getItems(event){
-     this.quotes = this.api.getQuotes()
-  
 
-  let val = event.target.value;
-
-  if (val && val.trim()!= ""){
-      this.quotes = this.quotes.filter((item) =>{
-        return(item.author.toLowerCase().indexOf(val.toLowerCase())> -1);
-      })
+  // function to load all quotes
+  loadQuotes(){
+      this.api.getQuotes().subscribe( res => {
+          this.quotes=res;
+    });
   }
- 
-  }  
+
+  //function to search an author and list all quotes from him
+  searchItem(event){
+      this.author = event.detail.value;
+      if (this.author ==""){
+          this.loadQuotes();
+          return;
+      }
+      this.api.getAuthor(this.author).subscribe(res=> {
+          this.quotes = res;
+        },err =>{
+            this.quotes = [] 
+      });
+  }
+
+  //function to open the details of quotes
+   openDetails(quote) {
+    let quoteId = quote.quote_id;
+    this.router.navigateByUrl(`/tabs/quotes/${quoteId}`);
+  }
   
 }
+ 
+  
+ 
+
+
+  
+
