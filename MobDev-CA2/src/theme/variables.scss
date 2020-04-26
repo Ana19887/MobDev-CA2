@@ -4,27 +4,31 @@
 /** Ionic CSS Variables **/
 :root {
 
-  --ion-background-color: var(ion-color-primary-contrast);
-  --ion-text-color:black;
-  --ion-tab-bar-background: var(ion-color-primary-contrast);
- 
- 
+ --ion-background-color: var(--ion-color-success);
+  --ion-text-color: black;
+  --ion-tab-bar-background: var(--ion-color-primary);
+
+  ion-tab-button {
+    --color-selected: var(--ion-color-success);
+  }
+  --ion-text-color-rgb: 255, 255, 255;
 
   ion-card {
-    --color: black;
+    --color: rgb(10, 2, 2);
   }
 
   ion-item {
-    --border-color: var(black);
-    --detail-push-color: var(black);
+    --border-color: var(--ion-color-light);
+    --detail-push-color: var(--ion-color-light);
   }
  /** primary **/
-  --ion-color-primary:#1a885e;
+ /** primary **/
+  --ion-color-primary: #272b30;
   --ion-color-primary-rgb: 39,43,48;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255,255,255;
-  --ion-color-primary-shade: black;
-  --ion-color-primary-tint: #81c2a9;
+  --ion-color-primary-shade: #22262a;
+  --ion-color-primary-tint: #3d4045;
 
   /** secondary **/
   --ion-color-secondary: #FFE300;

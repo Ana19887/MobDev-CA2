@@ -7,12 +7,10 @@
 </ion-header>
 
 <ion-content >
-    <ion-searchbar [(ngModel)]="search" (ionChange)="SearchDeath($event)"></ion-searchbar>
+    <ion-searchbar color="light" [(ngModel)]="search" (ionChange)="SearchDeath($event)"></ion-searchbar>
     
-    <ion-item button *ngFor="let death of (deaths | async)" >
-        <ion-label text-wrap  class="death-card">
+    <ion-item *ngFor="let death of (deaths | async)" >
         Number of deaths: {{death.deathCount}}
-      </ion-label>
     </ion-item>
 </ion-content>
    
